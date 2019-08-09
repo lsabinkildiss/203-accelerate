@@ -26,7 +26,7 @@ get_header(); ?>
 	$size = "full";
 ?>
 		
-<article class="case-study>"
+<article class="case-study">
 	<aside class="case-study-sidebar">
 		<h2><?php the_title(); ?></h2>
 		<h5><?php echo $services; ?></h5>

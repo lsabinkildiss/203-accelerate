@@ -42,12 +42,19 @@ Text Domain:  accelerate-theme-child
 
 /*Case Studies Template style */
 
+article.case-study {
+	width: 100%;
+}
+
 aside.case-study-sidebar {
-	float: left !important;
-	width: 300px !important;
+	float: left;
+	width: 25%;
+	margin-right: 15%;
 }
 
 div.case-study-images {
-	float: right !important;
+	overflow: auto;
+	width: 60%;
+	
 }
 
