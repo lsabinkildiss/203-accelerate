@@ -35,7 +35,7 @@ get_header(); ?>
 <?php the_content(); ?>
 
 	<p><a href="<?php echo $link; ?>">Site Link</a></p>
-</aside>
+	</aside>
 
 <div class="case-study-images">
 	<?php if($image_1) {
@@ -47,7 +47,7 @@ get_header(); ?>
 } ?>
 
 <?php if($image_3) { 
-	echo wp_get_attachment_image( $image_2, $size );
+	echo wp_get_attachment_image( $image_3, $size );
 } ?>
 	
 </div>

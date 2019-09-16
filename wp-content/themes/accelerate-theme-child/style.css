@@ -58,3 +58,39 @@ div.case-study-images {
 	
 }
 
+/*Home Page Featured Work*/
+
+.site-content h4 {
+text-align: center;
+}
+
+ ul {
+	list-style: none;
+}
+
+/* Case Studies Archive*/
+
+div.case-study-images img {
+	width: 100%;
+	height: auto;
+}
+
+/*Footer Icons*/
+
+#menu-item-47361 {
+	float: left;
+	padding-right: 20px;
+}
+
+/*Contact Form Styles*/
+
+.nf-form-content {
+	width: 600px;
+	margin: 0 auto;
+}
+
+#nf-field-4 {
+	float: right;
+	background-color: #45ac9d;
+}
+
