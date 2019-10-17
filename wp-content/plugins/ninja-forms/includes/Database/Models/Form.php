@@ -282,6 +282,16 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
         ) );
         $new_form_id = $wpdb->insert_id;
 
+        $blacklist = array(
+            '_seq_num',
+            'embed_form',
+            'public_link',
+            'public_link_key',
+            'allow_public_link',
+        );
+        $blacklist = apply_filters( 'ninja_forms_excluded_duplicate_form_settings', $blacklist );
+        $blacklist = "'" . implode( "','", $blacklist ) . "'";
+
         // Duplicate the Form Meta.
         $wpdb->query( $wpdb->prepare(
            "
@@ -289,7 +299,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
                 SELECT %d, `key`, `value`
                 FROM   {$wpdb->prefix}nf3_form_meta
                 WHERE  parent_id = %d
-                AND `key` != '_seq_num';
+                AND `key` NOT IN({$blacklist});
            ", $new_form_id, $form_id
         ));
 

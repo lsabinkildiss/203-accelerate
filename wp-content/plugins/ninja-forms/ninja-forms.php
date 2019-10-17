@@ -3,7 +3,7 @@
 Plugin Name: Ninja Forms
 Plugin URI: http://ninjaforms.com/
 Description: Ninja Forms is a webform builder with unparalleled ease of use and features.
-Version: 3.4.18
+Version: 3.4.20
 Author: The WP Ninjas
 Author URI: http://ninjaforms.com/?utm_source=Ninja+Forms+Plugin&utm_medium=Plugins+WP+Dashboard
 Text Domain: ninja-forms
@@ -59,7 +59,7 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          * @since 3.0
          */
 
-        const VERSION = '3.4.18';
+        const VERSION = '3.4.20';
         
         /**
          * @since 3.4.0
@@ -1306,14 +1306,6 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
      * @since 3.3.17
      */
     function nf_update_marketing_feed() {
-        // Fetch our membership data.
-        $data = wp_remote_get( 'http://api.ninjaforms.com/feeds/?fetch=memberships' );
-        // If we got a valid response...
-        if ( 200 == $data[ 'response' ][ 'code' ] ) {
-            // Save the data to our option.
-            $data = wp_remote_retrieve_body( $data );
-            update_option( 'ninja_forms_memberships_feed', $data, false );
-        }
         // Fetch our addon data.
         $data = wp_remote_get( 'http://api.ninjaforms.com/feeds/?fetch=addons' );
         // If we got a valid response...

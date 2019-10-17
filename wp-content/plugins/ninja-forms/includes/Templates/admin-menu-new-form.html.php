@@ -475,7 +475,7 @@
     <div class="{{{ data.renderClasses() }}}" {{{ data.renderVisible() }}}>
         {{{ data.renderSetting() }}}
         <span class="nf-setting-error"></span>
-        <span class="nf-import-options" style="display:none">
+        <span class="nf-dev-import-options" style="display:none">
             <?php _e( 'Please use the following format', 'ninja-forms' ); ?>:
             <br>
             <br>
@@ -489,6 +489,21 @@
 Label One, value-one, 1
 Label Two, value-two, 2
 Label Three, value-three, 3
+            </pre>
+            <textarea></textarea>
+            <a href="#" class="nf-button primary nf-import extra"><?php _e( 'Import', 'ninja-forms' ); ?></a>
+        </span>
+        <span class="nf-import-options" style="display:none">
+            <?php _e( 'Please place one label on each line, separated by commas.', 'ninja-forms' ); ?>
+            <br>
+            <br>
+            <em>
+            Example:
+            </em>
+            <pre>
+Label One,
+Label Two,
+Label Three
             </pre>
             <textarea></textarea>
             <a href="#" class="nf-button primary nf-import extra"><?php _e( 'Import', 'ninja-forms' ); ?></a>

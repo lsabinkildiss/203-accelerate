@@ -13,7 +13,7 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
     public function __construct()
     {
         if( isset( $_POST[ 'nf_resume' ] ) && isset( $_COOKIE[ 'nf_wp_session' ] ) ){
-            add_action( 'ninja_forms_loaded', array( $this, 'resume' ) );
+            add_action( 'init', array( $this, 'resume' ) );
             return;
         }
 
@@ -273,17 +273,19 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
                 $unique_field_value = serialize( $unique_field_value );
             }
 
-            /*
-             * Check our db for the value submitted.
-             */
-            
-            global $wpdb;
-            // @TODO: Rewrite this to use our submissions API.
-            $sql = $wpdb->prepare( "SELECT COUNT(m.meta_id) FROM `" . $wpdb->prefix . "postmeta` AS m LEFT JOIN `" . $wpdb->prefix . "posts` AS p ON p.id = m.post_id WHERE m.meta_key = '_field_%d' AND m.meta_value = '%s' AND p.post_status = 'publish'", $unique_field_id, $unique_field_value );
-            $result = $wpdb->get_results( $sql, 'ARRAY_N' );
-            if ( intval( $result[ 0 ][ 0 ] ) > 0 ) {
-                $this->_errors['fields'][ $unique_field_id ] = array( 'slug' => 'unique_field', 'message' => $unique_field_error );
-                $this->_respond();
+            if ( ! empty($unique_field_value) ) {
+                /*
+                 * Check our db for the value submitted.
+                 */
+                
+                global $wpdb;
+                // @TODO: Rewrite this to use our submissions API.
+                $sql = $wpdb->prepare( "SELECT COUNT(m.meta_id) FROM `" . $wpdb->prefix . "postmeta` AS m LEFT JOIN `" . $wpdb->prefix . "posts` AS p ON p.id = m.post_id WHERE m.meta_key = '_field_%d' AND m.meta_value = '%s' AND p.post_status = 'publish'", $unique_field_id, $unique_field_value );
+                $result = $wpdb->get_results( $sql, 'ARRAY_N' );
+                if ( intval( $result[ 0 ][ 0 ] ) > 0 ) {
+                    $this->_errors['fields'][ $unique_field_id ] = array( 'slug' => 'unique_field', 'message' => $unique_field_error );
+                    $this->_respond();
+                }
             }
         }
 

@@ -68,11 +68,19 @@ text-align: center;
 	list-style: none;
 }
 
+li.individual-featured-work figure {
+	float: left;
+	margin: 0 auto;
+	padding-left: 10px;
+}
+
+
 /* Case Studies Archive*/
 
 div.case-study-images img {
 	width: 100%;
 	height: auto;
+	padding-bottom: 35px;
 }
 
 /*Footer Icons*/
@@ -92,5 +100,71 @@ div.case-study-images img {
 #nf-field-4 {
 	float: right;
 	background-color: #45ac9d;
+}
+
+.contact .main-content h2 {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.contact .main-content p {
+	width: 600px;
+	margin: 0 auto;
+	padding-bottom: 40px;
+}
+
+/*About Page Hero Area*/
+
+div.about-main-content h3 {
+	width: 575px;
+	color: white;
+	margin: 0 auto;
+}
+
+
+/*About Page Our Services*/
+
+.our-services {
+	width: 530px;
+	margin: 0 auto;
+}
+.our-services p {
+	text-align: center;
+}
+
+/*About Page ACF Section*/
+
+figure.service-offered-image  {
+	width: 100%;
+	height: auto;
+	padding-bottom: 35px;
+}
+
+
+/*About Page Contact Section*/
+
+.services-contact {
+	height: 125px;
+	border-top: 1px solid #b9bbbd;
+	border-bottom: 1px solid #b9bbbd; 
+}
+
+.services-contact h3 {
+	margin-left: 90px;
+	float: left;
+	padding-bottom: 30px;
+}
+
+.services-contact .about-button {
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  background: none repeat scroll 0 0 #45ac9d;
+  float: right;
+  margin-right: 120px;
+  margin-top: 30px;
 }
 
