@@ -14,6 +14,7 @@
 function accelerate_child_scripts() {
 	wp_enqueue_style( 'accelerate-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'accelerate-style' ));
+    wp_enqueue_style( 'accelerate-google-fonts','//fonts.googleapis.com/css?family=Bebas+Neue|Montserrat|Montserrat+Alternates');
 }
 add_action( 'wp_enqueue_scripts', 'accelerate_child_scripts' );
 
@@ -24,7 +25,7 @@ function create_custom_post_types() {
             'labels' => array(
                 'name' => __( 'Case Studies' ),
                 'singular_name' => __( 'Case Study' )
-            ),
+        ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'case-studies' ),
@@ -33,7 +34,12 @@ function create_custom_post_types() {
 }
 add_action( 'init', 'create_custom_post_types' );
 
+// Add thumbnails to posts 
+
+add_theme_support( 'post-thumbnails' );
+
 // Create a Custom Page Type
+
 function create_services_offered() {
     register_post_type( 'services_offered',
         array(
@@ -44,6 +50,8 @@ function create_services_offered() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'services' ),
+            'taxonomies' => array( 'category'),
+            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         )
     );
 }
@@ -59,11 +67,25 @@ function accelerate_child_body_classes( $classes ) {
     $classes[] = 'contact';
 
   }
-
     
     return $classes;
      
 }
 
-// Add a filter for the about page
+// Add a Sidebar
+
+function accelerate_theme_child_widget_init() {
+    
+    register_sidebar( array(
+        'name' =>__( 'Homepage sidebar', 'accelerate-theme-child'),
+        'id' => 'sidebar-2',
+        'description' => __( 'Appears on the static front page template', 'accelerate-theme-child' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+    
+}
+add_action( 'widgets_init', 'accelerate_theme_child_widget_init' );
         

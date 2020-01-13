@@ -9,17 +9,21 @@
  */
 
 get_header(); ?>
-<div id="primary" class="site-content sidebar">
-<div class="main-content" role="main">
 
-<div class="error-page-image>"
-
-
-<div class="error-page">
-<h2 >Whoops, Took a Wrong Turn...</h2>
-<p>Sorry, this page no longer exists, never existed or has been moved.  We feel like complete jerks for totally misleading you.</p>
-<p>Feel free to take a look around our blog or some of our featured work.</p>
-</div>
+<section class="error-page" "site-content">
+  <div class="error-page-container">
+  	<div class="figure">
+	<figure>
+	<img alt="my contact image" id="contact-img" src="contact.jpg"/>
+	</figure>
+  </div>
+  <div class="text">
+	<h2 >Whoops, Took a Wrong Turn...</h2>
+	<p>Sorry, this page no longer exists, never existed or has been moved.  We feel like complete jerks for totally misleading you.
+	<br><br>Feel free to take a look around our blog or some of our featured work.</p>
+	</div>
+ </div>
+</section>
 
 
 <!-- our footer section -->

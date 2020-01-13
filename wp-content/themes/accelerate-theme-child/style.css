@@ -90,6 +90,8 @@ div.case-study-images img {
 	padding-right: 20px;
 }
 
+
+
 /*Contact Form Styles*/
 
 .nf-form-content {
@@ -127,35 +129,156 @@ div.about-main-content h3 {
 .our-services {
 	width: 530px;
 	margin: 0 auto;
+	padding-bottom: 30px;
 }
+
 .our-services p {
 	text-align: center;
 }
 
-/*About Page ACF Section*/
+/*About Page Services Offered Section*/
 
-figure.service-offered-image  {
-	width: 100%;
-	height: auto;
-	padding-bottom: 35px;
+html body {
+	height: 100%;
 }
 
 
+.services-offered {
+	/*display: flex;*/
+	height: 100%;
+}
+.service {
+	/*display: flex;
+	flex-direction: column;*/
+	}
+
+
+
+.service-text-left {
+   display: inline-block;
+    /*flex-flow: row wrap;*/
+   /* justify-content: flex-start; */
+    /*align-items: center;*/
+    float: left;
+    width: 70%; 
+}
+
+.service-text-right {
+   display: inline-block;
+    /*flex-flow: row wrap;*/
+   /* justify-content: flex-start; */
+    /*align-items: center;*/
+    float: none;
+    width: 70%;
+        
+}
+
+
+.service-image {
+	display: inline-block;
+	/*flex-flow: row wrap;*/
+   /* justify-content: flex-start;*/
+   /* align-items: center;*/
+    width: 20%;
+
+}
+
+.service-image-left img {
+	height: 70%;
+	width: 70%;
+	/*padding-top: 60px;*/
+	padding-bottom: 40px;
+	padding-left: 15px;
+	float: left;
+}
+.service-image-right img {
+	height: 70%;
+	width: 70%;
+	/*padding-top: 60px;*/
+	padding-bottom: 40px;
+	padding-left: 15px;
+	float: none;
+}
+
+.service-title {
+	clear: both;
+}
+
+.no-spacing {
+
+}
 /*About Page Contact Section*/
 
-.services-contact {
-	height: 125px;
-	border-top: 1px solid #b9bbbd;
-	border-bottom: 1px solid #b9bbbd; 
+/* Flex Experiment*/
+.about-cta {
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid #bfbfbf;
+	width: 960px;
+	margin-left: 200px;
 }
 
-.services-contact h3 {
-	margin-left: 90px;
+div.cta-container  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 650px; 
+}
+
+div.call-to-action {
+  margin: 0;
+}
+
+.call-to-action h2 {
+	font-size: 1.25em;
+	line-height: 2;
+}
+
+
+
+/* End Flex Experiment*/
+
+/* Grid Experiment*/
+
+
+/*.contact-full-width {
+	width: 960px;
+	display: block;
+	border-top: 1px gray;
+
+
+#contact {
+
+}
+
+
+div.contact-half-width-services-question  {
+
+	/*margin-top: 300px; 
+	/*margin-left: 600px;*/
+	/*display: inline-block;*/
+	/*width: 300px;
 	float: left;
-	padding-bottom: 30px;
+	/*margin-left: 350px;
+	padding-top: -210px;*/
 }
 
-.services-contact .about-button {
+/*div.contact-half-width-button {
+	width: 500px;
+	float: right;*/
+}
+
+/*.contact-half-width-button {
+  margin-bottom: 50px;
+  width: 500px;
+  display: inline-block;
+  /*margin: auto;
+  float: right;*/
+
+}
+
+/*.contact-half-width-button .button {
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -163,8 +286,49 @@ figure.service-offered-image  {
   display: inline-block;
   font-size: 16px;
   background: none repeat scroll 0 0 #45ac9d;
-  float: right;
-  margin-right: 120px;
-  margin-top: 30px;
+  top-margin: 300px;*/
 }
 
+a {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+ /* display: inline-block;*/
+  font-size: 16px;
+  padding: 1.50em 3.75em;
+  }
+
+
+
+/*404 Page */
+
+
+.error-page {
+	display: flex;
+	justify-content: center;
+	/*border-top: 1px solid #bfbfbf;*/
+	/*width: 960px;*/
+	/*margin-left: 200px;*/
+}
+
+div.error-page-container  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 650px; 
+}
+
+.error-page-container #contact-image {
+  /*margin: 0;*/
+}
+
+.error-page-container h2 {
+	font-family: 'Montserrat Alternates', sans-serif;
+	color: #45ac9d;
+	font-size: 1.75em;
+	line-height: 2;
+}

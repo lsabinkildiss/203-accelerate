@@ -38,60 +38,47 @@ get_header(); ?>
 	<?php $postorder=1;  ?>
 
 <?php query_posts ('posts_per_page=4&post_type="services_offered'); ?>
-<?php while (have_posts())  : the_post(); ?>
+<?php while (have_posts())  : the_post(); 	
+
+	<h3><?php the_title(); ?></h3>
 
 	<div class="service">
 
-		<div class="service-title">
-			<h3><?php the_title(); ?></h3>
-		</div>
-
 		<?php
 		if ($postorder==1) { 
-		   echo('<div class="service-container">');
-		   echo('<div class="service-text-left">');
+		   echo('<div class="service-text">');
 		   echo('<p>');
-		   echo get_the_content();
-		   echo('</p>');
-		   echo('</div>');
-		   echo('<figure class="service-image service-image-right">');
-		   the_post_thumbnail();
-		   echo('</figure>');
-		   $postorder=2;
-		   echo('</div>');
+		   get_the_content();
 		} else {
-		   echo('<div class="service-container">');
-		   echo('<figure class="service-image service-image-left">');
-		   the_post_thumbnail();
-		   echo('</figure>');
-		   echo('<div class="service-text-right">');
-		   echo('<p class="no-spacing">');
-		   echo get_the_content();
-		   echo('</p>');
-		   echo('</div>');
-		   echo('</div>');
-		   $postorder=1;
+
 		}
+
 		?>
+		   <?php echo get_the_content(); ?></p>
+		</div>
+		<figure class="service-image">
+		<?php the_post_thumbnail(); ?>
+		</figure>
 	</div>	
 <?php endwhile; //end of loop.  ?>
 <?php wp_reset_query(); // resets the altered query back to the original?>			
-</div>		 
+</div>		
 </section>
 
 
 
 
 <!-- our contact section -->
-<section class="about-cta">
- <div class="cta-container">
- 	<h2>Interested in Working With Us?</h2>
-    <a class="button" href="#">Contact Us</a> 
-    </div> <!-- end cta-container -->
-</section> 	<!-- end about-cta -->
- 
-			
-
+<section class="services-contact-container">
+<div class="site-content"
+	<div class="services-question">
+		<h3>Interested in working with us?</h3>
+	</div>
+	<div class="service-button">
+		<a class="button" href="#">Contact Us</a>
+	</div>
+</div>			
+</section>	
 
 <!-- our footer section -->
 <?php get_footer(); ?>
